@@ -11,11 +11,12 @@ const lines = [
   [2, 4, 6]
 ];
 
-export const calculateWinner = (squares: SquareValue[]): SquareValue => {
+export const calculateWinner = (squares: SquareValue[]): {value: SquareValue, indices: number[]} | null => {
   for (let i = 0; i < lines.length; i++) {
     const [a, b, c] = lines[i];
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-      return squares[a];
+      return {value: squares[a], indices: [a,b,c]}; 
+      // return squares[a];
     }
   }
   return null;
@@ -44,8 +45,8 @@ export const calculateNext = (squares: SquareValue[]): number => {
     }
   }
   // Random move
-  const availableMoves = squares.map((item, index) => index).filter((itm, idx) => squares[idx] === null);console.log(availableMoves);
-  const random = Math.floor(Math.random() * availableMoves.length);console.log('random ->', random, '; availableMoves[random] ->', availableMoves[random]);
+  const availableMoves = squares.map((item, index) => index).filter((itm, idx) => squares[idx] === null);
+  const random = Math.floor(Math.random() * availableMoves.length);
   return availableMoves[random];
 };
 

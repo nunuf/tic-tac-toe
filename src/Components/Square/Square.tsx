@@ -5,11 +5,12 @@ export type SquareValue = 'X' | 'O' | null;
 interface SquareProps {
   value: SquareValue;
   onClick: () => void;
+  isWining?: boolean;
 }
 
 const Square: React.FC<SquareProps> = (props: SquareProps): JSX.Element => {
   return (
-    <div className="Square" onClick={props.onClick}>
+    <div className={props.isWining ? 'Square Wining' : 'Square'} onClick={props.onClick}>
       {props.value}
     </div>
   );

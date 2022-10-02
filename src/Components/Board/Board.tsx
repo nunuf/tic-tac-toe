@@ -5,6 +5,7 @@ import './Board.css';
 interface BoardProps {
   squares: SquareValue[];
   onClick: (i: number) => void;
+  indices?: number[]; 
 }
 
 const Board: React.FC<BoardProps> = (props: BoardProps): JSX.Element => {
@@ -14,6 +15,7 @@ const Board: React.FC<BoardProps> = (props: BoardProps): JSX.Element => {
       <Square
         value={props.squares[i]}
         onClick={() => props.onClick(i)}
+        isWining={props.indices?.includes(i)}
       />
     );
   };
