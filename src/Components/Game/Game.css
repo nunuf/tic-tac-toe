@@ -1,0 +1,43 @@
+.Game {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.Game > h1 {
+  font-size: 80px;
+  background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+}
+
+.Game .GameBoard {
+  margin: 20px;
+}
+
+.Game .Btn, .ModalContent .Btn {
+  font-size: 24px;
+  cursor: pointer;
+  border: 2px solid #F9B8F9;
+  text-align: center;
+  padding: 4px 12px;
+  border-radius: 12px;
+}
+
+.ModalContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 50px;
+  font-weight: bold;
+  height: 100vh;
+}
+
+.ModalContent .Message {
+  margin: 32px;
+}

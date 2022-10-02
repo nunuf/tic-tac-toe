@@ -1,0 +1,12 @@
+.Board {
+  width: 500px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.BoardRow {
+  display: flex;
+  flex-direction: row;
+  flex: 33%;
+}

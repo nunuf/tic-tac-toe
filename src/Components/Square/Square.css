@@ -1,0 +1,12 @@
+.Square {
+  flex: 33%;
+  height: 100%;
+  border: 2px solid #F9B8F9;
+  box-sizing: border-box;
+  font-size: 110px;
+  font-weight: bold;
+  display: grid;
+  place-items: center;
+  box-shadow:0px 0px 6px 5px #EC04F0;
+}
+
