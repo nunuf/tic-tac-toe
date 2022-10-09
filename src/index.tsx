@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Game from './Components/Game/Game';
 import reportWebVitals from './reportWebVitals';
+
 import './index.css';
 
 const root = ReactDOM.createRoot(

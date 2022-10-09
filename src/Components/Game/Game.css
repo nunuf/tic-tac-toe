@@ -8,7 +8,7 @@
 }
 
 .Game > h1 {
-  font-size: 64px;
+  font-size: 52px;
   background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -16,34 +16,4 @@
 
 .Game .GameBoard {
   margin: 20px;
-}
-
-.ModalContent .Btn {
-  font-size: 24px;
-  cursor: pointer;
-  border: 2px solid #F9B8F9;
-  text-align: center;
-  padding: 4px 12px;
-  border-radius: 12px;
-  box-shadow: 0px 0px 5px 7px #EC04F0;
-}
-
-.ModalContent {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #EC04F0;
-  flex-direction: column;
-  font-size: 42px;
-  font-weight: bold;
-  height: 100vh;
-}
-
-.ModalContent .Message {
-  margin: 20px;
-}
-
-.ModalContent .Emoji {
-  margin-bottom: 60px;
-  font-size: 80px;
 }

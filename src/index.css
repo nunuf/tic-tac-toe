@@ -3,5 +3,10 @@ body {
   margin: 0;
   background-color: #444444;
   color: #F9B8F9;
-  font-family: cursive;
+  font-family: TicTacToeFont;
+}
+
+@font-face {
+  src: url('./Assets/Fonts/animeace.ttf');
+  font-family: TicTacToeFont;
 }
