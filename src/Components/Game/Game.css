@@ -8,11 +8,10 @@
 }
 
 .Game > h1 {
-  font-size: 80px;
+  font-size: 64px;
   background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin: 0;
 }
 
 .Game .GameBoard {
@@ -35,11 +34,16 @@
   align-items: center;
   color: #EC04F0;
   flex-direction: column;
-  font-size: 50px;
+  font-size: 42px;
   font-weight: bold;
   height: 100vh;
 }
 
 .ModalContent .Message {
-  margin: 32px;
+  margin: 20px;
+}
+
+.ModalContent .Emoji {
+  margin-bottom: 60px;
+  font-size: 80px;
 }

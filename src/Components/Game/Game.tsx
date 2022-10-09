@@ -13,10 +13,13 @@ const Game: React.FC = (): JSX.Element => {
     { squares: Array(9).fill(null) }
   ]);
   const [status, setStatus] = useState('');
+  const [emoji, setEmoji] = useState('');
   const [open, setOpen] = useState(false);
-  const handleClose = () => setOpen(false);
 
-
+  // Click handler:
+  // 1) Draws 'X' for user's move
+  // 2) Check if game's not over
+  // 3) Calculates and draws computer's next move with 'O'
   const handleClick = (i: number): void => {
     let newHistory = history.slice(0, stepNumber + 1);
     const current = newHistory[newHistory.length - 1];
@@ -30,7 +33,6 @@ const Game: React.FC = (): JSX.Element => {
         squares: squaresX
       }
     ]);
-
 
     // Check if it is a tie
     calculateTie(squaresX);
@@ -54,28 +56,29 @@ const Game: React.FC = (): JSX.Element => {
     setStepNumber(newHistory.length - 1);
   };
 
-  const playAgain = (start: number): void => {
-    setStepNumber(start);
+  const playAgain = (): void => {
+    setStepNumber(0);
   };
 
   const current = history[stepNumber];
   const winner = calculateWinner(current.squares);
   const tie = calculateTie(current.squares);
 
-
   useEffect(() => {
     if (winner?.value === 'X') {
-      setStatus("You WON! ✨🥳✨");
+      setStatus("You WON!");
+      setEmoji("✨👑✨");
       setOpen(true);
     } else if (winner?.value === 'O') {
-      setStatus("You LOST Loser!😝😂");
+      setStatus("You LOST Loser!");
+      setEmoji("🙈🙊🙉");
       setOpen(true);
     } else if (tie) {
       setStatus("It's a Tie!");
+      setEmoji("🎀");
       setOpen(true);
     }
-  }, [status, winner, tie]);
-
+  }, [status, emoji, winner, tie]);
 
   return (
     <div className="Game">
@@ -88,12 +91,11 @@ const Game: React.FC = (): JSX.Element => {
         />
       </div>
 
-      <Modal
-        open={open}
-        onClose={handleClose}>
+      <Modal open={open}>
         <Box className="ModalContent">
           <div className='Message'>{status}</div>
-          <div className="Btn" onClick={() => { handleClose(); playAgain(0); }}>Play Again</div>
+          <div className='Emoji'>{emoji}</div>
+          <div className="Btn" onClick={() => { setOpen(false); playAgain(); }}>Play Again</div>
         </Box>
       </Modal>
     </div>

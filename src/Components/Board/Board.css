@@ -1,6 +1,7 @@
 .Board {
-  width: 500px;
-  height: 500px;
+  --board-size: calc(100vh - 280px);
+  height: var(--board-size);
+  width: var(--board-size);
   display: flex;
   flex-direction: column;
 }
