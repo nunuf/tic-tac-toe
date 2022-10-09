@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { Box, Modal } from '@mui/material';
 import { calculateNext, calculateTie, calculateWinner } from '../../Utils/Calc';
 import Board from '../Board/Board';
+import DisplayStatus from '../DisplayStatus/DisplayStatus';
 import { SquareValue } from '../Square/Square';
 
 import './Game.css';
@@ -60,6 +60,8 @@ const Game: React.FC = (): JSX.Element => {
     setStepNumber(0);
   };
 
+  const close = () => { setOpen(false); playAgain(); };
+
   const current = history[stepNumber];
   const winner = calculateWinner(current.squares);
   const tie = calculateTie(current.squares);
@@ -90,14 +92,7 @@ const Game: React.FC = (): JSX.Element => {
           indices={winner?.indices}
         />
       </div>
-
-      <Modal open={open}>
-        <Box className="ModalContent">
-          <div className='Message'>{status}</div>
-          <div className='Emoji'>{emoji}</div>
-          <div className="Btn" onClick={() => { setOpen(false); playAgain(); }}>Play Again</div>
-        </Box>
-      </Modal>
+      <DisplayStatus open={open} status={status} emoji={emoji} onClose={close}/>
     </div>
   );
 }
