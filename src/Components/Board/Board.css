@@ -1,5 +1,5 @@
 .Board {
-  --board-size: calc(100vh - 280px);
+  --board-size: calc(100vh - 400px);
   height: var(--board-size);
   width: var(--board-size);
   display: flex;

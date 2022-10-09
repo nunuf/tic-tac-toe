@@ -73,7 +73,7 @@ const Game: React.FC = (): JSX.Element => {
       setOpen(true);
     } else if (winner?.value === 'O') {
       setStatus("You LOST Loser!");
-      setEmoji("🙈🙊🙉");
+      setEmoji("🙈🙉🙊");
       setOpen(true);
     } else if (tie) {
       setStatus("It's a Tie!");
