@@ -1,18 +1,19 @@
 # tic-tac-toe
 
-My first React app.
-<br/>
-A simple Tic Tac Toe board game implementation.
+My first React App.
+  
+A simple Tic Tac Toe board game.
+  
+![image](./src/Assets/Images/screenshot.jpg)
 
-## Available Scripts
-
-In the project directory, you can run:
-
-```npm start```
-
-Runs the app in the development mode.
-<br/>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-## Usage
-[pink-tic-tac-toe.firebaseapp.com](pink-tic-tac-toe.firebaseapp.com)
+## Install
+```
+npm i
+```
+## Run
+```
+npm start
+```
+## Open
+Open in browser [http://localhost:3000](http://localhost:3000)  
+Or click here to open it from Firebase: [tic-tac-toe](https://pink-tic-tac-toe.firebaseapp.com)
